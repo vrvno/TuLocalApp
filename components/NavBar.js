@@ -1,4 +1,8 @@
-import { StyleSheet, Text, View, Image } from "react-native";
+// NavBar.js
+import React from "react";
+import { StyleSheet, View, Image } from "react-native";
+
+import Button from "./Button";
 
 const LogoTuLocal = require("../assets/tulocal-tiktok.png");
 
@@ -6,6 +10,7 @@ export default function NavBar() {
   return (
     <View style={styles.navBar}>
       <Image source={LogoTuLocal} style={styles.icono} />
+      <Button label={"Registrate"} />
     </View>
   );
 }
@@ -13,12 +18,13 @@ export default function NavBar() {
 const styles = StyleSheet.create({
   navBar: {
     position: "absolute",
-    top: 0,
+    width: "80%",
+    alignSelf: "center",
     alignItems: "center",
     flexDirection: "row",
     backgroundColor: "white",
     height: 100,
-    width: 500,
+    justifyContent: "space-between",
     borderBottomLeftRadius: 20,
     borderBottomRightRadius: 20,
     shadowColor: "#000",
@@ -29,9 +35,11 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.23,
     shadowRadius: 2.62,
     elevation: 4,
+    zIndex: 1,
   },
   icono: {
-    height: 40,
-    width: 170,
+    height: 60,
+    width: 150,
+    marginLeft: 10,
   },
 });
